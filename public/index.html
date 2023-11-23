@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w2.org/1999/xhtml">
+<html lang="en">
+    <head>
+	<meta name="generator" content="Hugo 0.119.0">
+            <meta charset="utf-8" />
+    <title>Lyudhia </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="4s3ti cv terminal format">
+    <meta property="og:title" content="Lyudhia" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://lyudhia.love" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href=""/>
+    <link rel="canonical" href="https://lyudhia.love/" />    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.33.2/js/jquery.terminal.min.js"></script>
+    <script src="https://unpkg.com/jquery.terminal/js/autocomplete_menu.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.33.2/css/jquery.terminal.min.css" rel="stylesheet"/>
+
+    <style>
+        body {
+            width: 100%;
+            font-size: 18px;
+        }
+    </style>
+    
+    </head>
+        <body>
+        
+<script> 
+jQuery(document).ready(function($) {
+    var animation = false;
+    var availableCommands = ["all", "whois", 'social', 'work', 'education',
+                    'skills', 'softskills', 'languages',
+	            
+                     'startx', 
+                     'exit', 
+                    "TwoYearsOlder!",
+                    
+                    ] 
+
+    $('body').terminal(function(command, term) {
+
+     
+    function whois () {
+        term.echo ("");
+         
+            term.echo ("[[b;grey;]Name:]\t\t\tlyudhia");
+            term.echo ("[[b;grey;]Profession:]\t\tpartnership");
+            term.echo ("[[b;grey;]Location:]\t\toxford (1\/2) \u0026 anatolia (1\/2)");
+            
+                term.echo ("[[b;grey;]Email:]\t\t\tlyudhia314@gmail.com");
+            
+            
+                term.echo ("[[b;grey;]Homepage:]\t\thttps:\/\/www.lyudhia.love");
+            
+            
+        
+        term.echo ("");
+      }
+
+    function getRndInteger(min, max) {
+       return Math.floor(Math.random() * (max - min) ) + min;
+    }
+
+    function social () {
+        term.echo("");
+        
+            
+                 
+                    term.echo("          https:\/\/github.com");
+                 
+                    term.echo("        https:\/\/facebook.com");
+                 
+                    term.echo("         https:\/\/myspace.com");
+                 
+                    term.echo("             https:\/\/www.hi5.com");
+                 
+                    term.echo("       https:\/\/instagram.com");
+                 
+                    term.echo("  https:\/\/anothersocial.com");
+                
+            
+        
+        term.echo("")
+    }
+	    
+    function certifications () {
+        term.echo("");
+        
+    }
+	    
+    function work () {
+        term.echo("");
+        
+    }
+
+    function education () {
+        term.echo("");
+        
+            
+                term.echo("[[b;red;]Red Color training]");
+                term.echo("June 2019 - July 2019");
+                
+                    term.echo("Descrption about red color trianing");
+                
+                term.echo("-------------------- ");
+                term.echo("");
+            
+                term.echo("[[b;grey;]Default color training]");
+                term.echo("Sept 2004 - Jun 2008");
+                
+                term.echo("-------------------- ");
+                term.echo("");
+            
+        
+    }
+
+    function skills () {
+        term.echo(" ");
+        
+            
+                var bar_length = Math.round( 90  / 10);
+                var bar_filled = Array(bar_length + 1).join("&#9611;");
+                var bar_blank= Array(11 - bar_length).join("&#9617;");
+                term.echo("[[b;grey;]Skill 1:]\n" +
+                        bar_filled + bar_blank + 
+                         90  +"%");
+                
+                term.echo ("")
+            
+                var bar_length = Math.round( 30  / 10);
+                var bar_filled = Array(bar_length + 1).join("&#9611;");
+                var bar_blank= Array(11 - bar_length).join("&#9617;");
+                term.echo("[[b;grey;]Skill 2:]\n" +
+                        bar_filled + bar_blank + 
+                         30  +"%");
+                
+                term.echo ("")
+            
+                var bar_length = Math.round( 50  / 10);
+                var bar_filled = Array(bar_length + 1).join("&#9611;");
+                var bar_blank= Array(11 - bar_length).join("&#9617;");
+                term.echo("[[b;blue;]Skill 3:]\n" +
+                        bar_filled + bar_blank + 
+                         50  +"%");
+                
+                    term.echo("Skill names can have colors too");
+                
+                term.echo ("")
+            
+        
+    }
+
+    const musingsArray = [
+    "thy guerdon? not a shilling, though",
+    "osculation :D with you :D",
+    "pet names are hard ;-;. 'fae girl' is a bit diminutive, but I seem to have a propensity towards diminutive pet names?",
+    "imp is good. angel is good. My angimp! impel? my vortician faerie (where is this possessiveness coming from)",
+    "chaucer is forever ruined for me because of you :P. I can't read The Canterbury Tales without thinking of that wonderful, wonderful room in OWL...",
+    "i love trying to sneak up on you in Mob! i know my stride is heavy, and my boots make it even harder, and the floor is creaky and i'm too confident (?) but the half-smirk on your face as you intentionally keep working on your pset before you look up is... adorableeeeee",
+    "i am moonstruck. not starstruck, not sunstruck. moonstruck. by u",
+    "Turkiye is truly special. That Mediterranean climate!! It looks exactly like California. And I'm a bit sad I couldn't experience it first with you. next summer :))",
+    "sometimes... sometimes I [redacted] and I think of you and it's alright. thank you for being there for me, in heart & soul & spirit, even when it feels like you're a world away",
+    "Orwell and his wife went to Catalonia together, when Orwell decided to become an anti-fascist and join the not-quite-communist enough anti-Franco militia. His wife is the reason he didn't die. I want to be the reason you don't die when you do dangerous things (care for you!)",
+    "oxford, berkeley, santa barbara, santa monica (oh you've *been* to SoCal already! & 500ft from my parents and twin too), Texas, DC, oxford, prague, geneva, the Himalayas, oxford, ...",
+    "we come of age together. our bildungsroman (maybe I at least caught the tail end of yours)",
+    "tbc I do think my fustigation is slightly too much. pls call me out on it",
+    "i want to sing you lullabies :3 but something's gone wrong. My voice gets stuck in my throat as I lay next to you in bed and I don't know what happened",
+    "i feel our love turning rancid. like sour milk. (i love sour milk. see: curd). it hurts, i don't want to feed you rot, and sometimes it feels like we shove it down each other's throats",
+    "ldr can and will be wonderful. because of things like this",
+    "at some point you'll start getting repeats, and you'll start to get a feel for the size of the set you're sampling from. but how do you know this is all of them :eyes: maybe I just release a certain set a week",
+    "I USE ARCH AND YOU SHOULD TOO",
+    "maybe i should write longer form messages. terminal grab-bag is fun for an hour but good writing is eternal",
+    "i am worried about you"
+];
+
+    function musings() {
+    	const randomIndex = getRndInteger(0,20);
+    	const randomMusing = musingsArray[randomIndex];
+	term.echo (randomMusing)
+    }
+
+
+    function misc (){
+        term.echo ("")
+        term.echo("[[b;teal;]CONGRATULATIONS!!!!!!]" + "\n")
+        term.echo ("[[;orange;]Happy Birthday \u003c3\n\n(not quite half a year late yet. YET)\n\nwe\u0027re on the 4th iteration here at lyudhia.love, ft. a shell interface and monochrome. our hearts go out to the ill-fated Gallery (i can\u0027t get img calls to work with JS), LLM integration (Llama-2 didn\u0027t like being fine-tuned on WhatsApp msgs), and former dreams of dynamism (this is, sadly, not an actual SSH)\n\nin july, I was stumped. what do for gf bday? nothing was satisfactory -- books are overdone, a nice letter isn\u0027t special enough, trip (?) wasn\u0027t viable once we found ourselves on opposite sides of the Atlantic. but then! inspiration struck (embodied in the one and only Neel Redkar) \u0026 I wanted to carve out a corner of the Internet for the two of us. together :))\n\nmy webdev was atrocious back then (still is, but at least my CSS is passable) so this took a lot longer than expected. I used Wix as a placeholder firstly because I didn\u0027t know how to implement a password-protected website otherwise, and secondly because misdirection is king! (queen?)\n\nI cherish you. I choose you. I love you. syntactic \u0026 semantic imperfection riddle this place, yet hopefully I\u0027ve managed to convey some fraction of my...adoration?\nmy work here has grown with us, you know -- a flurry in July, quite a bit in August, ~nothing in Sept (I see you!! and India), quite a bit more in Oct, some in Nov. There are gems in here that I would never write today (have left everything undated for fun :D).\n\nAnyway. Enjoy. Hope you have fun. I\u0027m starting to get embarrassed writing this lol (esp bc you can just type the commands over and over and over again to see them over and over and over again...)\n\nANYWAY. Before I get cold feet, some things to start (musings \u0026 affection)\n\nthis page is alive! updateable \u0026 timeless. this can be so much more -- more than words on a screen, more than a glorified love letter, this can be a whole and authentic representation of us! changing as we change, growing as we grow. Hopefully this makes LDR more bearable (I will update this regularly).\n\nI LOVE YOU\n\n~Yudhi\n]")
+        term.echo ("")
+    } 
+
+
+      function source() {
+          term.echo("        _______            \n"+
+                    "       |       |           \n"+
+                    "       |       |           \n"+
+                    "       |_______|_______    \n"+
+	                "               |       |   \n"+
+                    "               |       |   \n"+
+                    " ______________|_______|   \n"+
+                    "|      |       |       |   \n"+
+                    "|      |       |       |   \n"+
+                    "|______|_______|_______|   \n"+
+                    "[[;red;]May the source be with you]\n"+
+                    "[[;grey;]https://github.com/4s3ti/terminalcv\n");
+      }
+
+    
+    function progress(percent, width) {
+        var size = Math.round(width*percent/100);
+        var left = '', taken = '', i;
+        for (i=size; i--;) {
+            taken += '=';
+        }
+        if (taken.length > 0) {
+            taken = taken.replace(/=$/, '>');
+        }
+        for (i=width-size; i--;) {
+            left += ' ';
+        }
+        return '[' + taken + left + '] ' + percent + '%';
+    }
+
+    function loading () {
+        var i = 0, size = 30;
+        prompt = term.get_prompt();
+        string = progress(0, size);
+        term.set_prompt(progress);
+        animation = true;
+        (function loop() {
+            string = progress(i++, size);
+            term.set_prompt(string);
+            if (i < 100) {
+                timer = setTimeout(loop, 10);
+            } else {
+                term.echo(progress(i, size) + ' [[b;green;]OK]').set_prompt(prompt);
+                animation = false
+            }
+        })();
+    }
+
+       
+        commands = command.split(/[ ]+/);
+        switch(commands[0]) {
+            case 'whois':
+                whois();
+                break;
+            case 'TwoYearsOlder!':
+                misc();
+                break;
+	    case 'musings':
+		musings();
+		break;
+            default:
+                term.echo("\nunknown command: " + command + "\n" +
+                          "you know the password :)\n");
+        }
+    }, {
+        prompt: '[[;white;]lyudhia@world][[;white;]:~$]' + " ",
+        greetings: "[[b;white;]hi :))\n\nyou know the password\n]",
+        keydown: function(e, term) {
+            if (animation) {
+                if (e.which == 68 && e.ctrlKey) { 
+                    clearTimeout(timer);
+                    animation = false;
+                    term.echo(string + ' [[b;red;]FAIL]')
+                    .set_prompt(prompt);
+                }
+                return false;
+            }
+        },
+        autocompleteMenu: true,
+        completion: availableCommands
+        
+    });
+});
+</script>
+
+        </body>
+</html>

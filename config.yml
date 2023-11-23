@@ -1,0 +1,140 @@
+## Example Config file
+BaseURL: "https://lyudhia.love"
+theme: "terminalcv"
+title: "Lyudhia"
+
+params:
+  description: "4s3ti cv terminal format"
+  prompt: "lyudhia@world"
+  promptColor: white
+  promptSimbols: ":~$"
+  promptSimbolsColor: white
+  startxLocation: https://example.com
+  hideSocialName: true 
+  exitLocation: 'about:blank'
+  hidesource: true
+  greeting: | 
+    hi :))
+
+    you know the password
+
+
+  whois: 
+      name: "lyudhia"
+      profession: "partnership"
+      location: "oxford (1/2) & anatolia (1/2)"
+      email: "lyudhia314@gmail.com"
+      homelink: "https://www.lyudhia.love"
+      description: |
+              
+
+  social:
+    ## IF you want to keep them aligned just add spaces
+    - name: "github"
+      url: "          https://github.com"
+    - name: "facebook"
+      url: "        https://facebook.com"
+    - name: "myspace"
+      url: "         https://myspace.com"
+    - name: "hi5"
+      url: "             https://www.hi5.com"
+    - name: "instagram"
+      url: "       https://instagram.com"
+    - name: "Another social"
+      url: "  https://anothersocial.com"
+
+  workexp:
+    - jobTitle: Job With Red Title
+      color: red
+      company: '-' 
+      location: somewhere
+      date: August 2010 - Present
+      description: Some description about this red title job
+
+    - jobTitle: Job with purple title
+      color: purple
+      company: '-'
+      location: somewhere elese
+      date: July 2000  - July 2010
+      description: Some description about this purple job
+
+    - jobTitle: Job with default color title
+      company: '-'
+      location: anywhere
+      date: July 2008 - 2010
+      description: Description about this default color job
+
+  education:
+   - courseName: Red Color training
+     color: red
+     date: June 2019 - July 2019
+     description: Descrption about red color trianing
+
+   - courseName: Default color training
+     date: Sept 2004 - Jun 2008
+     #description: There is no need for description
+
+  skills:
+    - name: Skill 1
+      percentage: 90
+      Description: you can add a description
+
+    - name: Skill 2
+      percentage: 30
+      #description: or you can leave it comented   
+
+    - name: Skill 3
+      color: blue
+      percentage: 50
+      description: Skill names can have colors too
+
+  softskills:
+    - name: SoftSkill 1
+      color: red
+      percentage: 80
+      #description:
+
+    - name:  SoftSkill 2
+      #color: 
+      percentage: 90
+      description: Description
+
+  languages:
+    - name: English
+      color: Blue
+      percentage: 50
+      #description: 
+
+    - name: Gibberish
+      percentage: 100
+      description: pasghettipigglywigg
+  
+  misc: 
+    commandName: TwoYearsOlder!
+    title: "CONGRATULATIONS!!!!!!"
+    titleColor: teal
+    content: |
+          Happy Birthday <3
+
+          (not quite half a year late yet. YET)
+
+          we're on the 4th iteration here at lyudhia.love, ft. a shell interface and monochrome. our hearts go out to the ill-fated Gallery (i can't get img calls to work with JS), LLM integration (Llama-2 didn't like being fine-tuned on WhatsApp msgs), and former dreams of dynamism (this is, sadly, not an actual SSH)
+
+          in july, I was stumped. what do for gf bday? nothing was satisfactory -- books are overdone, a nice letter isn't special enough, trip (?) wasn't viable once we found ourselves on opposite sides of the Atlantic. but then! inspiration struck (embodied in the one and only Neel Redkar) & I wanted to carve out a corner of the Internet for the two of us. together :))
+
+          my webdev was atrocious back then (still is, but at least my CSS is passable) so this took a lot longer than expected. I used Wix as a placeholder firstly because I didn't know how to implement a password-protected website otherwise, and secondly because misdirection is king! (queen?)
+
+          I cherish you. I choose you. I love you. syntactic & semantic imperfection riddle this place, yet hopefully I've managed to convey some fraction of my...adoration?
+          my work here has grown with us, you know -- a flurry in July, quite a bit in August, ~nothing in Sept (I see you!! and India), quite a bit more in Oct, some in Nov. There are gems in here that I would never write today (have left everything undated for fun :D).
+
+          Anyway. Enjoy. Hope you have fun. I'm starting to get embarrassed writing this lol (esp bc you can just type the commands over and over and over again to see them over and over and over again...)
+
+          ANYWAY. Before I get cold feet, some things to start (musings & affection)
+
+          this page is alive! updateable & timeless. this can be so much more -- more than words on a screen, more than a glorified love letter, this can be a whole and authentic representation of us! changing as we change, growing as we grow. Hopefully this makes LDR more bearable (I will update this regularly).
+
+          I LOVE YOU
+
+          ~Yudhi
+
+    contentColor: orange

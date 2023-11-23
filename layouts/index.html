@@ -1,0 +1,249 @@
+{{ define "body" }}
+<script> 
+jQuery(document).ready(function($) {
+    var animation = false;
+    var availableCommands = ["all", "whois", 'social', 'work', 'education',
+                    'skills', 'softskills', 'languages',
+	            {{ if .Site.Params.certifications }} 'certifications', {{ end }}
+                    {{ if .Site.Params.startxLocation }} 'startx', {{ end }}
+                    {{ if .Site.Params.exitLocation }} 'exit', {{ end }}
+                    {{ if .Site.Params.misc }}{{ .Site.Params.misc.commandName | default "misc"}},{{end}}
+                    {{ if not .Site.Params.hideSource }} 'source' {{ end }}
+                    ] 
+
+    $('body').terminal(function(command, term) {
+
+    /* Functions to be called by commands */
+    function whois () {
+        term.echo ("");
+        {{ with .Site.Params.whois }} 
+            term.echo ("[[b;grey;]Name:]\t\t\t{{ .name }}");
+            term.echo ("[[b;grey;]Profession:]\t\t{{ .profession }}");
+            term.echo ("[[b;grey;]Location:]\t\t{{ .location }}");
+            {{ if .email }}
+                term.echo ("[[b;grey;]Email:]\t\t\t{{ .email }}");
+            {{ end }}
+            {{ if .homelink }}
+                term.echo ("[[b;grey;]Homepage:]\t\t{{ .homelink }}");
+            {{ end }}
+            {{ if .description }}
+                term.echo ("")
+                term.echo ("{{ .description }}")
+            {{ end }}
+        {{ end }}
+        term.echo ("");
+      }
+
+    function getRndInteger(min, max) {
+       return Math.floor(Math.random() * (max - min) ) + min;
+    }
+
+    function social () {
+        term.echo("");
+        {{ if .Site.Params.hideSocialName }}
+            {{ with .Site.Params.social }}
+                {{ range . }} 
+                    term.echo("{{ .url }}");
+                {{ end }}
+            {{ end }}
+        {{ else }}
+            {{ with .Site.Params.social }}
+                {{ range . }}
+                    term.echo("{{ .name }}:" + "{{ .url }}");
+                {{ end }}
+            {{ end }}
+        {{ end }}
+        term.echo("")
+    }
+	    
+    function certifications () {
+        term.echo("");
+        {{ with .Site.Params.certifications }}
+            {{ range .}}
+                term.echo("[[b;{{ .color | default "grey" }};]{{ .certName }}]");
+	    	term.echo("{{ .date }}");
+                {{ if .company }}
+                    term.echo("{{ .company }}");
+                {{ end }}
+                {{ if .description }}
+                    term.echo("{{ .description }}");
+                {{ end }}
+                term.echo("-------------------- ");
+                term.echo("");
+            {{ end }}
+        {{ end }}
+    }
+	    
+    function work () {
+        term.echo("");
+        {{ with .Site.Params.work }}
+            {{ range .}}
+                term.echo("[[b;{{ .color | default "grey" }};]{{ .jobTitle }}]");
+                term.echo("{{ .company }}");
+                term.echo("{{ .location}}");
+                term.echo("{{ .date }}");
+                term.echo ("");
+                term.echo("{{ .description }}");
+                term.echo("-------------------- ");
+                term.echo("");
+            {{ end }}
+        {{ end }}
+    }
+
+    function education () {
+        term.echo("");
+        {{ with .Site.Params.education }}
+            {{ range . }}
+                term.echo("[[b;{{ .color | default "grey" }};]{{ .courseName }}]");
+                term.echo("{{ .date }}");
+                {{ if .description }}
+                    term.echo("{{ .description }}");
+                {{ end }}
+                term.echo("-------------------- ");
+                term.echo("");
+            {{ end }}
+        {{ end }}
+    }
+
+    function skills () {
+        term.echo(" ");
+        {{ with .Site.Params.Skills }}
+            {{ range . }}
+                var bar_length = Math.round({{ .percentage }} / 10);
+                var bar_filled = Array(bar_length + 1).join("&#9611;");
+                var bar_blank= Array(11 - bar_length).join("&#9617;");
+                term.echo("[[b;{{ .color | default "grey" }};]{{ .name }}:]\n" +
+                        bar_filled + bar_blank + 
+                        {{ .percentage }} +"%");
+                {{ if .description }}
+                    term.echo("{{ .description }}");
+                {{ end }}
+                term.echo ("")
+            {{ end }}
+        {{ end }}
+    }
+
+    const musingsArray = [
+    "thy guerdon? not a shilling, though",
+    "osculation :D with you :D",
+    "pet names are hard ;-;. 'fae girl' is a bit diminutive, but I seem to have a propensity towards diminutive pet names?",
+    "imp is good. angel is good. My angimp! impel? my vortician faerie (where is this possessiveness coming from)",
+    "chaucer is forever ruined for me because of you :P. I can't read The Canterbury Tales without thinking of that wonderful, wonderful room in OWL...",
+    "i love trying to sneak up on you in Mob! i know my stride is heavy, and my boots make it even harder, and the floor is creaky and i'm too confident (?) but the half-smirk on your face as you intentionally keep working on your pset before you look up is... adorableeeeee",
+    "i am moonstruck. not starstruck, not sunstruck. moonstruck. by u",
+    "Turkiye is truly special. That Mediterranean climate!! It looks exactly like California. And I'm a bit sad I couldn't experience it first with you. next summer :))",
+    "sometimes... sometimes I [redacted] and I think of you and it's alright. thank you for being there for me, in heart & soul & spirit, even when it feels like you're a world away",
+    "Orwell and his wife went to Catalonia together, when Orwell decided to become an anti-fascist and join the not-quite-communist enough anti-Franco militia. His wife is the reason he didn't die. I want to be the reason you don't die when you do dangerous things (care for you!)",
+    "oxford, berkeley, santa barbara, santa monica (oh you've *been* to SoCal already! & 500ft from my parents and twin too), Texas, DC, oxford, prague, geneva, the Himalayas, oxford, ...",
+    "we come of age together. our bildungsroman (maybe I at least caught the tail end of yours)",
+    "tbc I do think my fustigation is slightly too much. pls call me out on it",
+    "i want to sing you lullabies :3 but something's gone wrong. My voice gets stuck in my throat as I lay next to you in bed and I don't know what happened",
+    "i feel our love turning rancid. like sour milk. (i love sour milk. see: curd). it hurts, i don't want to feed you rot, and sometimes it feels like we shove it down each other's throats",
+    "ldr can and will be wonderful. because of things like this",
+    "at some point you'll start getting repeats, and you'll start to get a feel for the size of the set you're sampling from. but how do you know this is all of them :eyes: maybe I just release a certain set a week",
+    "I USE ARCH AND YOU SHOULD TOO",
+    "maybe i should write longer form messages. terminal grab-bag is fun for an hour but good writing is eternal",
+    "i am worried about you"
+];
+
+    function musings() {
+    	const randomIndex = getRndInteger(0,20);
+    	const randomMusing = musingsArray[randomIndex];
+	term.echo (randomMusing)
+    }
+
+
+    function misc (){
+        term.echo ("")
+        term.echo("[[b;{{ .Site.Params.misc.titleColor }};]{{ .Site.Params.misc.title }}]" + "\n")
+        term.echo ("[[;{{.Site.Params.misc.contentColor }};]{{ .Site.Params.misc.content }}]")
+        term.echo ("")
+    } 
+
+
+      function source() {
+          term.echo("        _______            \n"+
+                    "       |       |           \n"+
+                    "       |       |           \n"+
+                    "       |_______|_______    \n"+
+	                "               |       |   \n"+
+                    "               |       |   \n"+
+                    " ______________|_______|   \n"+
+                    "|      |       |       |   \n"+
+                    "|      |       |       |   \n"+
+                    "|______|_______|_______|   \n"+
+                    "[[;red;]May the source be with you]\n"+
+                    "[[;grey;]https://github.com/4s3ti/terminalcv\n");
+      }
+
+    //Funciton used by StartX to draw the progressBar
+    function progress(percent, width) {
+        var size = Math.round(width*percent/100);
+        var left = '', taken = '', i;
+        for (i=size; i--;) {
+            taken += '=';
+        }
+        if (taken.length > 0) {
+            taken = taken.replace(/=$/, '>');
+        }
+        for (i=width-size; i--;) {
+            left += ' ';
+        }
+        return '[' + taken + left + '] ' + percent + '%';
+    }
+
+    function loading () {
+        var i = 0, size = 30;
+        prompt = term.get_prompt();
+        string = progress(0, size);
+        term.set_prompt(progress);
+        animation = true;
+        (function loop() {
+            string = progress(i++, size);
+            term.set_prompt(string);
+            if (i < 100) {
+                timer = setTimeout(loop, 10);
+            } else {
+                term.echo(progress(i, size) + ' [[b;green;]OK]').set_prompt(prompt);
+                animation = false
+            }
+        })();
+    }
+
+      /* Functions End */
+        commands = command.split(/[ ]+/);
+        switch(commands[0]) {
+            case 'whois':
+                whois();
+                break;
+            case '{{ .Site.Params.misc.commandName | default "misc"}}':
+                misc();
+                break;
+	    case 'musings':
+		musings();
+		break;
+            default:
+                term.echo("\nunknown command: " + command + "\n" +
+                          "you know the password :)\n");
+        }
+    }, {
+        prompt: '[[;{{ .Site.Params.promptColor | default "grey" }};]{{ .Site.Params.prompt }}][[;{{ .Site.Params.promptSimbolsColor | default "grey" }};]{{.Site.Params.promptSimbols | default ":~$"}}]' + " ",
+        greetings: "[[b;{{ .Site.Params.greetingColor | default "white" }};]{{ .Site.Params.greeting }}]",
+        keydown: function(e, term) {
+            if (animation) {
+                if (e.which == 68 && e.ctrlKey) { // CTRL+D
+                    clearTimeout(timer);
+                    animation = false;
+                    term.echo(string + ' [[b;red;]FAIL]')
+                    .set_prompt(prompt);
+                }
+                return false;
+            }
+        },
+        autocompleteMenu: true,
+        completion: availableCommands
+        
+    });
+});
+</script>
+{{ end }}
